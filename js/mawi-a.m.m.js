@@ -1,15 +1,10 @@
-// Mawi A.M.M.js v= 1.0.0
+// Mawi A.M.M.js v= 1.0.2
 
 (function () {
   const style = document.createElement('style');
   style.textContent = `
-    html {
-      scroll-behavior: smooth;
-    }
-    ::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
-    }
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
     ::-webkit-scrollbar-track {
       background: #f0f0f0;
       border-radius: 10px;
@@ -93,17 +88,12 @@
       animation: windFade 0.8s linear forwards;
     }
     @keyframes windFade {
-      0% {
-        transform: scale(1);
-        opacity: 0.8;
-      }
-      100% {
-        transform: scale(2);
-        opacity: 0;
-      }
+      0% { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(2); opacity: 0; }
     }
   `;
   document.head.appendChild(style);
+
   const menu = document.createElement('div');
   menu.className = 'custom-context-menu';
   menu.innerHTML = `
@@ -138,6 +128,7 @@
     </button>
   `;
   document.body.appendChild(menu);
+
   document.addEventListener('mousedown', function (e) {
     const ripple = document.createElement('span');
     ripple.className = 'ripple';
@@ -146,15 +137,39 @@
     document.body.appendChild(ripple);
     setTimeout(() => ripple.remove(), 600);
   });
+
   window.addEventListener('contextmenu', e => {
     e.preventDefault();
-    menu.style.top = `${e.clientY}px`;
-    menu.style.left = `${e.clientX}px`;
+
+    menu.style.display = 'block'; // إظهار مؤقت للحصول على الحجم الفعلي
+    const menuWidth = menu.offsetWidth || 200;
+    const menuHeight = menu.offsetHeight || 250;
+    menu.style.display = 'none';
+
+    const padding = 10;
+    let left = e.clientX;
+    let top = e.clientY;
+
+    // ضبط الموضع أفقيًا
+    if (left + menuWidth > window.innerWidth - padding) {
+      left = window.innerWidth - menuWidth - padding;
+    }
+
+    // ضبط الموضع عموديًا
+    if (top + menuHeight > window.innerHeight - padding) {
+      top = top - menuHeight;
+      if (top < padding) top = padding;
+    }
+
+    menu.style.left = `${left}px`;
+    menu.style.top = `${top}px`;
     menu.style.display = 'flex';
   });
+
   window.addEventListener('click', () => {
     menu.style.display = 'none';
   });
+
   document.getElementById("copy-btn").addEventListener("click", () => {
     const selection = window.getSelection();
     const text = selection.toString();
@@ -162,6 +177,7 @@
       navigator.clipboard.writeText(text).catch(() => {});
     }
   });
+
   document.getElementById("cut-btn").addEventListener("click", () => {
     const selection = window.getSelection();
     if (!selection.isCollapsed) {
@@ -176,6 +192,7 @@
       document.body.removeChild(temp);
     }
   });
+
   document.getElementById("paste-btn").addEventListener("click", async () => {
     try {
       const text = await navigator.clipboard.readText();
@@ -188,6 +205,7 @@
       }
     } catch {}
   });
+
   document.addEventListener('mousemove', function (e) {
     const wind = document.createElement('div');
     wind.className = 'wind-trail';
