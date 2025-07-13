@@ -28,8 +28,8 @@
   --placeholder-text-color: #3e3e3e;
   --main-menu-text-color: #ffffff;
   --sub-menu-text-color: #3a3a3a;
-  --footer-title-color: #e8e8e8;
-  --footer-copyright-bg: #0e151d;
+  --footer-title-color: #101010;
+  --footer-copyright-bg: #00000000;
   --body-color-main: #f4f4f4;
   --all-link-color: #2b64ff;
   --black-text: #343434;
@@ -58,7 +58,7 @@
   --comments-dec: #333;
   --sticky-bg: #f1f1f1;
   --input-form: transparent;
-  --footer-email-title: #ffffff;
+  --footer-email-title: #101010;
   --bt-home: #f2f7fb;
   --cm-count: #555555;
   --shadow-light: 0px 2px 5px 1px rgb(0 0 0 / 0.10);
@@ -72,8 +72,8 @@
   --box-posts-share: #f1f1f1;
   --title-share: #1c1c1c;
   --title-share-fa: #5c5c5c;
-  --footer-text-color: #d7d7d7;
-  --footer-about-text: #868686;
+  --footer-text-color: #101010;
+  --footer-about-text: #383838;
   --footer-bg-color: #15202b;
   --footer-gadgets-title: #e8e8e8;
   --main-logo-text-color: #222222;
