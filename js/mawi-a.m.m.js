@@ -1,4 +1,4 @@
-// Mawi A.M.M.js v= 1.0.2
+// Mawi A.M.M.js v=1.0.3
 
 (function () {
   const style = document.createElement('style');
@@ -97,34 +97,38 @@
   const menu = document.createElement('div');
   menu.className = 'custom-context-menu';
   menu.innerHTML = `
-    <button onclick="location.href='/'">
+    <button onclick="location.href='https://www.mawiman.com'">
       <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
       الصفحة الرئيسية
     </button>
-    <button onclick="location.href='/p/my-products.html'">
+    <button onclick="location.href='https://www.mawiman.com/search/label/store'">
       <svg viewBox="0 0 24 24"><path d="M16 6V4H8v2H2v2h20V6zM4 10v10h16V10H4z"/></svg>
       المتجر
     </button>
-    <button onclick="location.href='/p/my-apps.html'">
+    <button onclick="location.href='https://www.mawiman.com/search/label/apps'">
       <svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>
       التطبيقات
     </button>
-    <button onclick="location.href='/p/blog.html'">
+    <button onclick="location.href='https://www.mawiman.com/search/label/projects'">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 13l-8-4v6l8 4 8-4v-6l-8 4z"/></svg>
+      المشاريع
+    </button>
+    <button onclick="location.href='https://www.mawiman.com/search/label/courses'">
+      <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 4h16v2H4zm0 4h10v2H4zm0 4h8v2H4z"/></svg>
+      الكورسات
+    </button>
+    <button onclick="location.href='https://www.mawiman.com/search/label/blogs'">
       <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h10v2H4zm0 5h16v2H4z"/></svg>
-      المقالات
+      المدوّنة
+    </button>
+    <button onclick="location.href='https://www.mawiman.com/search/label/digital-income'">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm1 17.93V18h-2v1.93A8 8 0 014.07 13H6v-2H4.07A8 8 0 0111 4.07V6h2V4.07A8 8 0 0119.93 11H18v2h1.93A8 8 0 0113 19.93z"/></svg>
+      الدخل الرقمي
     </button>
     <hr style="margin:6px 0;border:none;border-top:1px solid #eee;">
-    <button id="copy-btn">
-      <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-      نسخ
-    </button>
-    <button id="cut-btn">
-      <svg viewBox="0 0 24 24"><path d="M9.64 7.64l4.24 4.24L9.64 16.12a5.002 5.002 0 0 0 7.07 7.07 5.002 5.002 0 0 0 0-7.07l-4.24-4.24 4.24-4.24a5.002 5.002 0 0 0-7.07-7.07 5.002 5.002 0 0 0 0 7.07z"/></svg>
-      قص
-    </button>
-    <button id="paste-btn">
-      <svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM12 3c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm7 16H5V5h2v2h10V5h2v14z"/></svg>
-      لصق
+    <button onclick="location.href='https://www.mawiman.com/p/about-me.html'">
+      <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4s-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+      عنّي
     </button>
   `;
   document.body.appendChild(menu);
@@ -141,7 +145,7 @@
   window.addEventListener('contextmenu', e => {
     e.preventDefault();
 
-    menu.style.display = 'block'; // إظهار مؤقت للحصول على الحجم الفعلي
+    menu.style.display = 'block';
     const menuWidth = menu.offsetWidth || 200;
     const menuHeight = menu.offsetHeight || 250;
     menu.style.display = 'none';
@@ -150,12 +154,10 @@
     let left = e.clientX;
     let top = e.clientY;
 
-    // ضبط الموضع أفقيًا
     if (left + menuWidth > window.innerWidth - padding) {
       left = window.innerWidth - menuWidth - padding;
     }
 
-    // ضبط الموضع عموديًا
     if (top + menuHeight > window.innerHeight - padding) {
       top = top - menuHeight;
       if (top < padding) top = padding;
@@ -168,42 +170,6 @@
 
   window.addEventListener('click', () => {
     menu.style.display = 'none';
-  });
-
-  document.getElementById("copy-btn").addEventListener("click", () => {
-    const selection = window.getSelection();
-    const text = selection.toString();
-    if (text) {
-      navigator.clipboard.writeText(text).catch(() => {});
-    }
-  });
-
-  document.getElementById("cut-btn").addEventListener("click", () => {
-    const selection = window.getSelection();
-    if (!selection.isCollapsed) {
-      const range = selection.getRangeAt(0);
-      const temp = document.createElement("textarea");
-      temp.value = selection.toString();
-      document.body.appendChild(temp);
-      temp.select();
-      navigator.clipboard.writeText(temp.value).then(() => {
-        range.deleteContents();
-      }).catch(() => {});
-      document.body.removeChild(temp);
-    }
-  });
-
-  document.getElementById("paste-btn").addEventListener("click", async () => {
-    try {
-      const text = await navigator.clipboard.readText();
-      const activeEl = document.activeElement;
-      if (activeEl && (activeEl.tagName === "TEXTAREA" || activeEl.tagName === "INPUT")) {
-        const start = activeEl.selectionStart;
-        const end = activeEl.selectionEnd;
-        activeEl.value = activeEl.value.slice(0, start) + text + activeEl.value.slice(end);
-        activeEl.setSelectionRange(start + text.length, start + text.length);
-      }
-    } catch {}
   });
 
   document.addEventListener('mousemove', function (e) {
