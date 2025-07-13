@@ -1,4 +1,4 @@
-// Mawi A.M.M.js v=1.0.4
+// Mawi A.M.M.js v=1.0.5
 
 (function () {
   const style = document.createElement('style');
@@ -99,7 +99,7 @@
   menu.className = 'custom-context-menu';
   menu.innerHTML = `
     <button onclick="location.href='https://www.mawiman.com'">
-      <img src="https://www.svgrepo.com/show/525484/home-1.svg" alt="">
+      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEig_r-FfAeOSIHBV73yJiVOuQ-BHnpuGdPUNxWfi9lUeiIdVc8BL7mc3B9MQgoMMDK-tGppFnFwoHmS4n5X8xTOriyZL-ROUWJIZ_K7albbSa-orw80wBIq14e0F_Xq5IFpFrF1D5uVWQ7dqprJaHUQLQUXlRy2Tw6sio-aHCapga-f0iKCEoMFx5mEdBc=s512" alt="">
       الصفحة الرئيسية
     </button>
     <button onclick="location.href='https://www.mawiman.com/search/label/store'">
@@ -128,7 +128,7 @@
     </button>
     <hr style="margin:6px 0;border:none;border-top:1px solid #eee;">
     <button onclick="location.href='https://www.mawiman.com/p/about-me.html'">
-      <img src="https://www.svgrepo.com/show/50094/user.svg" alt="">
+      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgBzB7YseXF5nfvkOA5iIaFYAqOTuj5NYAh9HXeiEFEWknSOjB0ozEK7OqsMREVEfHb3seK1xHPD027MUwL-o1BS0iFqBeUMakTr7vwQBm2Htd___zPjldoYudQdxN8susEdLd7PAKWCvM-xpAdUrbsw83jvNg310L9kadiUfkZF4GfF8KFaeH5QKsj5-s=s80" alt="">
       عنّي
     </button>
   `;
