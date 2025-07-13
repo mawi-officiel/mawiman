@@ -1,4 +1,4 @@
-// Mawi A.M.M.js v=1.0.3
+// Mawi A.M.M.js v=1.0.4
 
 (function () {
   const style = document.createElement('style');
@@ -49,7 +49,7 @@
       box-shadow: 0 5px 20px rgba(0,0,0,0.15);
       border-radius: 8px;
       padding: 6px;
-      min-width: 200px;
+      min-width: 220px;
       z-index: 99999;
       animation: fadeIn 0.2s ease-out;
     }
@@ -59,7 +59,7 @@
       border-radius: 6px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       font-size: 14px;
       cursor: pointer;
       transition: background 0.2s, transform 0.2s;
@@ -68,10 +68,11 @@
       background: #f0f0f0;
       transform: scale(1.02);
     }
-    .custom-context-menu svg {
-      width: 18px;
-      height: 18px;
-      fill: #1094f4;
+    .custom-context-menu img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+      border-radius: 4px;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.95); }
@@ -98,36 +99,36 @@
   menu.className = 'custom-context-menu';
   menu.innerHTML = `
     <button onclick="location.href='https://www.mawiman.com'">
-      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      <img src="https://www.svgrepo.com/show/525484/home-1.svg" alt="">
       الصفحة الرئيسية
     </button>
     <button onclick="location.href='https://www.mawiman.com/search/label/store'">
-      <svg viewBox="0 0 24 24"><path d="M16 6V4H8v2H2v2h20V6zM4 10v10h16V10H4z"/></svg>
+      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEh-lbvzCoqPoDTrJKfohUesEBG4W316j7E2oejEwcY1Y9P9DMyVhrYtM52wsQllQNL2ZEyVXc4-OzFJ5Y_jhsfiisLzC_pNGEYDNUBfXiIYQgctFitlhGLAbeqo_KK5MCWA8HB4pAUkTF7E1bzbd-Qjetqk0AgmxkTj21TlpiA61FSq3isspJKC7pZsiFQ=s512">
       المتجر
     </button>
     <button onclick="location.href='https://www.mawiman.com/search/label/apps'">
-      <svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>
+      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEifWjr-kYTNpZKmWSCljYjCvhHWVAq0k0k80fX3_aEm_Jg3eMt7mbbeAzKIo4sVhDNZaF8JySYJ5dCLMgpMMK-QKKKwr3iQAIDIIQy3tl7Vp7G7PmgVZvYPxcGIjFTSPW2TigKh6wOhCbnMj96cA1YPwARInRGMjIQb20csEhoxcyV6E-7DtsjBXenpl6o=s150">
       التطبيقات
     </button>
     <button onclick="location.href='https://www.mawiman.com/search/label/projects'">
-      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 13l-8-4v6l8 4 8-4v-6l-8 4z"/></svg>
+      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiDt1qVCSQGLWlbfOvwj6Gx0T372jo7JarrtezQjJuJxHz7vm0Zn-z_eK9VOOw6PlraSyek39Au6xehkDFIOq4KCFbpqBsFKrjupZ9VSusJtOU9iJpkssxrOgGtPvLERomRuXx241h_Qy78xo9Bsaze71EmPmw3jzJeC6bLmP5Ha0xsaBzNN3L1cUm2oss=s512">
       المشاريع
     </button>
     <button onclick="location.href='https://www.mawiman.com/search/label/courses'">
-      <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 4h16v2H4zm0 4h10v2H4zm0 4h8v2H4z"/></svg>
+      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjqYcNdniIbf75zezlrHEYJdAjPGHfdb90Ixh56gwyRPkgcKR7sbY_x5fJ5sjwS-DI4U28szu4wbIngLhQwf5-OwufKJzrp8KD_QhoqsQfgUd-wMd-I8viAp6Sm4YC6K6xhaTRYUOdm-O7huTS0gz7vtKYErQUaVbfSQUT-3bTzdDRC9suqGAzcrRF0VA0=s512">
       الكورسات
     </button>
     <button onclick="location.href='https://www.mawiman.com/search/label/blogs'">
-      <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h10v2H4zm0 5h16v2H4z"/></svg>
+      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjTa7ctJO4zTCPupouBm9g21Z-3rNInjlzCLscGgo_9chr38ggtFqSJVNCRyWTI_AXh-t7YaQWsbnoJJ4g0MljNlriWPSHzb6dKChAZHRAoo-lPHCGnK8t4xAI8j04r4d-ohoTIQBgDLU-600axshzQu75vSASG2Z7wn4m9qcTTPLdI8vG4J9Hmq26ZNm8=s512">
       المدوّنة
     </button>
     <button onclick="location.href='https://www.mawiman.com/search/label/digital-income'">
-      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm1 17.93V18h-2v1.93A8 8 0 014.07 13H6v-2H4.07A8 8 0 0111 4.07V6h2V4.07A8 8 0 0119.93 11H18v2h1.93A8 8 0 0113 19.93z"/></svg>
+      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhay_6sAz1fmmlFOSa7BpyxDjIk1-_V9qHCjXgl3Z3YZESQBw-woyc7AiVRs-QC-JP7HYSia2njNX8xKKExLePOahG_uKTFV_OS4Pu_O8RbnGAD4kSEQMqpnM3rRTFeGRnbD5AqLIWCCvSj-Pd_yuoT-rzkGMXGgKUKdgVS_BEqKYVw3POCfVFFUEM3nao=s512">
       الدخل الرقمي
     </button>
     <hr style="margin:6px 0;border:none;border-top:1px solid #eee;">
     <button onclick="location.href='https://www.mawiman.com/p/about-me.html'">
-      <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4s-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+      <img src="https://www.svgrepo.com/show/50094/user.svg" alt="">
       عنّي
     </button>
   `;
@@ -146,8 +147,8 @@
     e.preventDefault();
 
     menu.style.display = 'block';
-    const menuWidth = menu.offsetWidth || 200;
-    const menuHeight = menu.offsetHeight || 250;
+    const menuWidth = menu.offsetWidth || 220;
+    const menuHeight = menu.offsetHeight || 300;
     menu.style.display = 'none';
 
     const padding = 10;
