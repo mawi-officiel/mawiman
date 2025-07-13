@@ -1,41 +1,36 @@
-// Not usable
-(function () {
-  const themes = {
-    light: "https://mawi-officiel.github.io/mawiman/MawiOne/Theme/light.css",
-    dark: "https://mawi-officiel.github.io/mawiman/MawiOne/Theme/dark.css"
-  };
+ // Not usable v1.0.0
+  (function () {
+    const toggle = document.getElementById('toggle');
 
-  const defaultTheme = "light";
-  const toggle = document.getElementById("toggle");
+    // استرجاع الحالة المحفوظة من الكوكيز
+    function getThemeFromCookie() {
+      const match = document.cookie.match(/theme=(light|dark)/);
+      return match ? match[1] : 'light';
+    }
 
-  function setCookie(name, value, days) {
-    const expires = new Date(Date.now() + days * 86400000).toUTCString();
-    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
-  }
+    // حفظ الحالة في الكوكيز
+    function setThemeCookie(theme) {
+      document.cookie = `theme=${theme}; path=/; max-age=31536000`;
+    }
 
-  function getCookie(name) {
-    const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
-    return match ? decodeURIComponent(match[2]) : null;
-  }
+    // تغيير الثيم
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        toggle.checked = true;
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        toggle.checked = false;
+      }
+      setThemeCookie(theme);
+    }
 
-  function applyTheme(themeName) {
-    const oldLink = document.getElementById("theme-css");
-    if (oldLink) oldLink.remove();
+    // عند تغيير السويتش
+    toggle.addEventListener('change', function () {
+      const theme = this.checked ? 'dark' : 'light';
+      applyTheme(theme);
+    });
 
-    const link = document.createElement("link");
-    link.id = "theme-css";
-    link.rel = "stylesheet";
-    link.href = themes[themeName];
-    document.head.appendChild(link);
-
-    setCookie("theme", themeName, 30);
-    toggle.checked = themeName === "dark";
-  }
-
-  toggle.addEventListener("change", function () {
-    applyTheme(this.checked ? "dark" : "light");
-  });
-  // عند بداية الصفحة
-  const savedTheme = getCookie("theme") || defaultTheme;
-  applyTheme(savedTheme);
-})();
+    // عند التحميل: طبق الثيم المحفوظ
+    applyTheme(getThemeFromCookie());
+  })();
