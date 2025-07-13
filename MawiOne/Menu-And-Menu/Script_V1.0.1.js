@@ -1,5 +1,5 @@
 // Not usable
-// ?v=1.0.0 Private
+// ?v=1.0.1 Private
 (function () {
   const menu = document.createElement('div');
   menu.className = 'custom-context-menu';
@@ -32,7 +32,7 @@
       <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhay_6sAz1fmmlFOSa7BpyxDjIk1-_V9qHCjXgl3Z3YZESQBw-woyc7AiVRs-QC-JP7HYSia2njNX8xKKExLePOahG_uKTFV_OS4Pu_O8RbnGAD4kSEQMqpnM3rRTFeGRnbD5AqLIWCCvSj-Pd_yuoT-rzkGMXGgKUKdgVS_BEqKYVw3POCfVFFUEM3nao=s512">
       الدخل الرقمي
     </button>
-    <hr style="margin:6px 0;border:none;border-top:1px solid #eee;">
+    <hr style="margin:6px 0;border:none;border-top:1px solid #1094f4;">
     <button onclick="location.href='https://www.mawiman.com/p/about-me.html'">
       <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgBzB7YseXF5nfvkOA5iIaFYAqOTuj5NYAh9HXeiEFEWknSOjB0ozEK7OqsMREVEfHb3seK1xHPD027MUwL-o1BS0iFqBeUMakTr7vwQBm2Htd___zPjldoYudQdxN8susEdLd7PAKWCvM-xpAdUrbsw83jvNg310L9kadiUfkZF4GfF8KFaeH5QKsj5-s=s80" alt="">
       عنّي
